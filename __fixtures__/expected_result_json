@@ -1,0 +1,154 @@
+[
+  {
+    "key": "common",
+    "value": null,
+    "type": "compound",
+    "children": [
+      {
+        "key": "follow",
+        "value": false,
+        "type": "added",
+        "children": []
+      },
+      {
+        "key": "setting1",
+        "value": "Value 1",
+        "type": "unchanged",
+        "children": []
+      },
+      {
+        "key": "setting2",
+        "value": 200,
+        "type": "removed",
+        "children": []
+      },
+      {
+        "key": "setting3",
+        "value": true,
+        "type": "removed",
+        "children": []
+      },
+      {
+        "key": "setting3",
+        "value": null,
+        "type": "added",
+        "children": []
+      },
+      {
+        "key": "setting4",
+        "value": "blah blah",
+        "type": "added",
+        "children": []
+      },
+      {
+        "key": "setting5",
+        "value": {
+          "key5": "value5"
+        },
+        "type": "added",
+        "children": []
+      },
+      {
+        "key": "setting6",
+        "value": null,
+        "type": "compound",
+        "children": [
+          {
+            "key": "doge",
+            "value": null,
+            "type": "compound",
+            "children": [
+              {
+                "key": "wow",
+                "value": "",
+                "type": "removed",
+                "children": []
+              },
+              {
+                "key": "wow",
+                "value": "so much",
+                "type": "added",
+                "children": []
+              }
+            ]
+          },
+          {
+            "key": "key",
+            "value": "value",
+            "type": "unchanged",
+            "children": []
+          },
+          {
+            "key": "ops",
+            "value": "vops",
+            "type": "added",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "group1",
+    "value": null,
+    "type": "compound",
+    "children": [
+      {
+        "key": "baz",
+        "value": "bas",
+        "type": "removed",
+        "children": []
+      },
+      {
+        "key": "baz",
+        "value": "bars",
+        "type": "added",
+        "children": []
+      },
+      {
+        "key": "foo",
+        "value": "bar",
+        "type": "unchanged",
+        "children": []
+      },
+      {
+        "key": "nest",
+        "value": {
+          "key": "value"
+        },
+        "type": "removed",
+        "children": []
+      },
+      {
+        "key": "nest",
+        "value": "str",
+        "type": "added",
+        "children": []
+      }
+    ]
+  },
+  {
+    "key": "group2",
+    "value": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
+      }
+    },
+    "type": "removed",
+    "children": []
+  },
+  {
+    "key": "group3",
+    "value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
+      },
+      "fee": 100500
+    },
+    "type": "added",
+    "children": []
+  }
+]
