@@ -15,27 +15,35 @@ const buildDiffTree = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
 
   const result = keys.reduce((acc, key) => {
-    const res = acc;
-
-    if (_.has(obj1, key) && _.has(obj2, key)) {
-      if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
-        res.push(buildNode(key, null, NodeTypes.compound, buildDiffTree(obj1[key], obj2[key])));
-      } else if (obj1[key] === obj2[key]) {
-        res.push(buildNode(key, obj1[key], NodeTypes.unchanged, []));
-      } else {
-        res.push(buildNode(key, obj1[key], NodeTypes.removed, []));
-        res.push(buildNode(key, obj2[key], NodeTypes.added, []));
-      }
-    } else {
-      if (!_.has(obj1, key)) {
-        res.push(buildNode(key, obj2[key], NodeTypes.added, []));
-      }
-      if (!_.has(obj2, key)) {
-        res.push(buildNode(key, obj1[key], NodeTypes.removed, []));
-      }
+    if (!_.has(obj1, key)) {
+      return [
+        ...acc,
+        buildNode(key, obj2[key], NodeTypes.added, []),
+      ];
     }
-
-    return res;
+    if (!_.has(obj2, key)) {
+      return [
+        ...acc,
+        buildNode(key, obj1[key], NodeTypes.removed, []),
+      ];
+    }
+    if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
+      return [
+        ...acc,
+        buildNode(key, null, NodeTypes.compound, buildDiffTree(obj1[key], obj2[key])),
+      ];
+    }
+    if (obj1[key] === obj2[key]) {
+      return [
+        ...acc,
+        buildNode(key, obj1[key], NodeTypes.unchanged, []),
+      ];
+    }
+    return [
+      ...acc,
+      buildNode(key, obj1[key], NodeTypes.removed, []),
+      buildNode(key, obj2[key], NodeTypes.added, []),
+    ];
   }, []);
 
   return result;
