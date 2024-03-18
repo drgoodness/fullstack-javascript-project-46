@@ -22,6 +22,8 @@ Supported output formats:
 - Node 21 is installed.
 ### Install
 ```bash
+git clone https://github.com/drgoodness/fullstack-javascript-project-46.git
+
 npm ci
 
 npm link

@@ -1,6 +1,6 @@
 import path from 'path';
 import getDiff from '../src/index.js';
-import { readFile } from '../src/filemanager.js';
+import readFile from '../src/filemanager.js';
 
 const getFilePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 

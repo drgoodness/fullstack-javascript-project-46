@@ -6,6 +6,6 @@ export default function buildOutput(items, format) {
     case 'stylish': return buildStylishOutput(items);
     case 'plain': return buildPlainOutput(items);
     case 'json': return JSON.stringify(items, null, 2);
-    default: return undefined;
+    default: throw new Error(`Invalid format - ${format}`);
   }
 }

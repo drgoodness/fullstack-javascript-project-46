@@ -7,9 +7,4 @@ const readFile = (filepath) => {
   return data;
 };
 
-const getFileExtension = (filepath) => {
-  const lastDotIndex = filepath.lastIndexOf('.');
-  return lastDotIndex !== -1 ? filepath.substring(lastDotIndex + 1) : '';
-};
-
-export { readFile, getFileExtension };
+export default readFile;
